@@ -1,0 +1,23 @@
+# Arquivos de configuração do IntelliJ IDEA
+.idea/
+
+# Arquivos de compilação Java
+*.class
+
+# Arquivos gerados pelo Maven
+target/
+
+# Arquivos de configuração do Maven
+mvnw
+mvnw.cmd
+.mvn/
+
+# Logs
+*.log
+
+*.iml
+
+.DS_Store
+
+Thumbs.db
+
