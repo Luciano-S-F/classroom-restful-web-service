@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Grade Level</title>
+    <title>Lista de Níveis de Ensino</title>
 </head>
 <body>
-<h1 th:text="${grade}"></h1>
+
+<h1>Níveis de Ensino</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Localização</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="gradeLevel : ${gradeLevels}">
+        <td th:text="${gradeLevel.name}">Nome</td>
+        <td th:text="${gradeLevel.location}">Localização</td>
+    </tr>
+    </tbody>
+</table>
+
 </body>
 </html>

@@ -9,8 +9,6 @@
   <mvc:annotation-driven/>
   <context:component-scan base-package="com.project.classroom"/>
 
-  <import resource="./persistence/unit-persistence.xml"/>
-  <import resource="./presentation/thymeleaf-config.xml"/>
 
   <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
     <property name="entityManagerFactory" ref="myEmf"/>
@@ -22,7 +20,9 @@
     <property name="maxUploadSize" value="10485760"/> <!-- 10MB -->
   </bean>
 
-  <tx:annotation-driven transaction-manager="transactionManager"/>
+
+  <import resource="./persistence/unit-persistence.xml"/>
+  <import resource="presentation.xml"/>
 
 
 </beans>
