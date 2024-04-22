@@ -15,7 +15,7 @@ import java.util.HashSet;
 import java.util.List;
 
 @Controller
-@RequestMapping("/gradelevel/page")
+@RequestMapping("/gradelevel/show")
 public class GradeLevelController {
 
     private GradeLevelToGradeLevelDTO gradeLevelToGradeLevelDTO;
@@ -34,9 +34,7 @@ public class GradeLevelController {
     @GetMapping("/list")
     public String listGradeLevel(Model model) {
 
-
-
         model.addAttribute("gradeLevels",  gradeLevelToGradeLevelDTO.convertList(gradeLevelService.list()));
-        return "index";
+        return "gradelist";
     }
 }

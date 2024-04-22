@@ -24,5 +24,7 @@
   <import resource="./persistence/unit-persistence.xml"/>
   <import resource="presentation.xml"/>
 
+  <tx:annotation-driven transaction-manager="transactionManager"/>
+
 
 </beans>

@@ -37,6 +37,9 @@ public class LearnerToLearnerDTO implements Converter<Learner, LearnerDTO> {
    * @return a list of LearnerDTOs
    */
   public List<LearnerDTO> convertList(List<Learner> learnerList) {
+    if (learnerList == null) {
+      return new ArrayList<>();
+    }
     List<LearnerDTO> learnerDTOs = new ArrayList<>();
     for (Learner learner : learnerList) {
       learnerDTOs.add(convert(learner));
