@@ -30,21 +30,21 @@
       <version>2.21.0</version>
       <scope>test</scope>
     </dependency>
-<!--NAO-->
+
     <dependency>
       <groupId>org.hamcrest</groupId>
       <artifactId>hamcrest-core</artifactId>
       <version>1.3</version>
       <scope>test</scope>
     </dependency>
-<!--NAO-->
+
     <dependency>
       <groupId>org.hamcrest</groupId>
       <artifactId>hamcrest-library</artifactId>
       <version>1.3</version>
       <scope>test</scope>
     </dependency>
-<!--NAO-->
+
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
@@ -95,7 +95,7 @@
       <artifactId>hibernate-jpa-2.1-api</artifactId>
       <version>1.0.0.Final</version>
     </dependency>
-<!-- NAO -->
+
     <dependency>
       <groupId>com.h2database</groupId>
       <artifactId>h2</artifactId>
@@ -199,7 +199,7 @@
         <configuration>
           <url>http://localhost:8080/manager/text</url>
           <server>tomcat</server>
-          <path>/padawans</path>
+          <path>/classroom</path>
           <username>tomcat</username>
           <password>tomcat</password>
         </configuration>
