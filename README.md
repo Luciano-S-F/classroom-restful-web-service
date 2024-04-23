@@ -1,7 +1,12 @@
 # Classroom RESTful Web Service
 
 ## Overview
-The Classroom RESTful Web Service is a sophisticated Java-based application designed to manage educational entities within academic settings. It facilitates robust interactions with data concerning learners and grade levels through a clean and intuitive RESTful API. The service aims to provide a comprehensive tool for educational institutions to streamline their data management processes effectively.
+
+### For Educational Institutions
+This program is tailored to assist educational institutions in efficiently managing their student data. It enables schools and other learning centers to register and manipulate student details across different grade levels. With this system, institutions can effortlessly add new students, update existing student profiles, and organize them into appropriate grade levels, all through a user-friendly interface. This enhances the ability to handle educational data with greater accuracy and efficiency, making it easier for schools to maintain up-to-date records of their students' progress and enrollment.
+
+### For Developers
+This application is a RESTful web service built using Java and leverages the Spring Framework for robust back-end functionality. It features a suite of APIs for CRUD operations, which allows for seamless integration with existing systems or the development of new applications. The architecture utilizes Spring MVC to handle requests and responses, Spring Data JPA for object-relational mapping (ORM), and Hibernate for transaction management. This setup not only simplifies the development process but also enhances scalability and maintainability. The service provides a flexible, powerful solution for managing educational data, supporting extensive customization to meet specific institutional needs.
 
 ## Key Features
 - **Learner Management:** Comprehensive CRUD operations allow for managing detailed learner profiles within the educational system.
@@ -28,6 +33,8 @@ This project employs a layered architectural approach, enhancing separation of c
 - **Maven:** Manages dependencies and builds the project, integrating seamlessly with Tomcat for deployment.
 - **Tomcat:** A robust application server used to deploy and manage the web service effectively. Essential for running your Java applications.
 - **IntelliJ IDEA:** The preferred IDE, offering powerful coding assistance and ergonomic design for Java development. It enhances productivity through its advanced coding assistance, intelligent refactoring, and deep integration with the Spring framework.
+- **Thymeleaf** (In Development): Being integrated to adopt an architecture where the application can render its own web pages, enhancing the flexibility to produce server-side dynamic content.
+
 
 ## Setup and Deployment
 
@@ -35,8 +42,6 @@ This project employs a layered architectural approach, enhancing separation of c
 To deploy the Classroom RESTful Web Service to a Tomcat server using Maven, follow these steps:
 
 - **Ensure Tomcat is Installed:** Confirm that the Tomcat server is installed and operational on your system.
-  
-## Setup and Deployment
 
 ### 1.1 Setting Up Tomcat
 - **Download and Extract Tomcat:**
@@ -75,31 +80,18 @@ To deploy the Classroom RESTful Web Service to a Tomcat server using Maven, foll
 ### 1.3. Deploying Using Maven
 - **Deploy with Maven:**
   - With the above configurations in place, use Maven to deploy your application directly to Tomcat. Ensure you've properly set up your Maven `settings.xml` for Tomcat credentials correctly.
+### Application Deployment Commands
 
+```bash
+# Deploy the application to the server
+mvn tomcat7:deploy
 
-- **Deploy the Application:**
-  - Use the following command to deploy your application:
-    ```bash
-    mvn tomcat7:deploy
-    ```
-  
-- **Redeploying the Application:**
-  - If the application is already deployed and you need to redeploy after making changes:
-    ```bash
-    mvn tomcat7:redeploy
-    ```
+# Redeploy the application after making changes
+mvn tomcat7:redeploy
 
-- **Undeploying the Application:**
-  - To remove the application from the server:
-    ```bash
-    mvn tomcat7:undeploy
-    ```
-
-- **Cleaning up Before Deploying:**
-  - To clean your project's target directory before deploying:
-    ```bash
-    mvn clean tomcat7:deploy
-    ```
+# Remove the application from the server
+mvn tomcat7:undeploy
+```
 
 ### 2. Database Configuration and Setup
 To set up the database for the Classroom RESTful Web Service:
@@ -129,6 +121,12 @@ To set up the database for the Classroom RESTful Web Service:
      mysql -u username -p classroom < fill_tables.sql
      ```
    - Replace `username` with your MySQL username.
+   - Example for Root User Without Password:
+      ```bash
+     mysql -u root classroom < fill_tables.sql
+     ```
+
+## Classroom API Documentation
 
 ## Using Postman to Test API Endpoints
 Postman is a powerful tool for testing APIs. Below are step-by-step instructions to set up and use Postman with the Classroom RESTful Web Service.
@@ -157,8 +155,8 @@ All requests start with the base URL: http://localhost:8080/classroom
   - **Body:**
     ```json
     {
-      "name": "History",
-      "location": "Aveiro",
+      "name": "12th grade class",
+      "location": "Lisboa",
       "learnerList": []
     }
     ```
@@ -195,8 +193,8 @@ All requests start with the base URL: http://localhost:8080/classroom
     {
       "name": "John Doe",
       "email": "john.doe@example.com",
-      "phone": "1234567890",
-      "gradeLevelName": "History"
+      "phone": "987654321",
+      "gradeLevelName": "Bachelor's in Mathematics"
     }
     ```
 
@@ -206,10 +204,10 @@ All requests start with the base URL: http://localhost:8080/classroom
   - **Body:**
     ```json
     {
-      "name": "Jane Doe",
-      "email": "jane.doe@example.com",
-      "phone": "0987654321",
-      "gradeLevelName": "Mathematics"
+      "name": "John Smith",
+      "email": "john.smith@example.com",
+      "phone": "987678546",
+      "gradeLevelName": "Bachelor's in Mathematics"
     }
     ```
 
